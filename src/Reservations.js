@@ -1,8 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import DatePicker from 'react-datepicker';
+import 'react-datepicker/dist/react-datepicker.css';
 
 function Reservations() {
     const [reservation, setReservation] = useState({
-        date: '',
+        date: new Date(),
         time: '',
         diners: '',
         occasion: '',
@@ -58,7 +60,11 @@ function Reservations() {
             <form onSubmit={handleSubmit}>
                 <div>
                     <label htmlFor="reservation-date">Date:</label>
-                    <input type="date" id="reservation-date" name="date" value={reservation.date} onChange={handleChange} />
+                    <DatePicker
+                        inline
+                        selected={reservation.date}
+                        onChange={(date) => setReservation({...reservation, date})}
+                    />
 
                     <label htmlFor="time">Time:</label>
                     <select name="time" id="time" value={reservation.time} onChange={handleChange}>

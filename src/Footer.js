@@ -37,7 +37,6 @@ function Footer({onReservationClick }) {
           <a href="https://www.twitter.com" target="_blank" rel="noopener noreferrer">
            <TiSocialTwitter />
           </a>
-
           <a href="https://www.tiktok.com" target="_blank" rel="noopener noreferrer">
           <FaTiktok />
           </a>
