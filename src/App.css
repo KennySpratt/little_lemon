@@ -20,12 +20,22 @@ header {
   display: flex;
   align-items: center;
   padding: 1rem;
-  background-color: #f2f2f2; /* Example background color */
+  background-color: #333; /* Example background color */
 }
 
 header img {
-  max-width: 150px; /* Adjust the size of the logo */
+  margin-left: 200px;
+  max-width: 400px; /* Adjust the size of the logo */
 }
+
+.logo {
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
+}
+
+.logo:hover {
+  filter: drop-shadow(0 0 10px yellow); /* Glowing effect */
+}
+
 
 /* Navigation */
 nav {
@@ -55,6 +65,15 @@ nav a:hover {
   text-decoration: underline;
 }
 
+input[type="date"] {
+  font-size: 16px;
+  padding: 8px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  /* Add additional styles as needed */
+}
+
+
 /* Main Content */
 main {
   grid-area: main;
@@ -63,17 +82,23 @@ main {
 
 /* Footer */
 footer {
-  grid-area: footer;
+  display: flex;
   background-color: #222;
   color: white;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  padding: 1rem;
-  gap: 1rem;
+  justify-content: center; /* Center the items horizontally */
+  align-items: center; /* Center the items vertically */
+  text-align: center; /* Center the text inside each div */
+}
+
+footer > div {
+  flex: 1; /* Give each div an equal amount of space */
+  padding: 1rem; /* Add some padding inside each div */
+  margin: 0.5rem; /* Optional: Add some margin between divs */
 }
 
 footer img {
-  max-width: 150px; /* Adjust the size of the logo */
+  max-width: 200px; /* Adjust the size of the logo */
+
 }
 
 .footer-navigation ul {
@@ -82,13 +107,15 @@ footer img {
 }
 
 .footer-navigation a {
-  color: white;
+  color: #D9D9D9;
   text-decoration: none;
 }
 
 .footer-social a {
   display: block;
   margin-bottom: 0.5rem;
+  color: #495E57;
+  font-size: x-large;
 }
 
 /* Responsive Design */
@@ -104,5 +131,10 @@ footer img {
 
   footer {
     grid-template-columns: 1fr;
+  }
+  @media screen and (max-width: 600px) { /* Adjust 600px to your breakpoint */
+    footer {
+      flex-direction: column;
+    }
   }
 }
