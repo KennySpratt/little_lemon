@@ -1,38 +1,108 @@
-.App {
-  text-align: center;
+/* Global Styles */
+body {
+  margin: 0;
+  font-family: Arial, sans-serif; /* or any other preferred font */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+/* Container */
+.container {
+  display: grid;
+  grid-template-areas:
+    'header'
+    'nav'
+    'main'
+    'footer';
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/* Header */
+header {
+  grid-area: header;
   display: flex;
-  flex-direction: column;
   align-items: center;
+  padding: 1rem;
+  background-color: #f2f2f2; /* Example background color */
+}
+
+header img {
+  max-width: 150px; /* Adjust the size of the logo */
+}
+
+/* Navigation */
+nav {
+  grid-area: nav;
+  background-color: #333;
+  padding: 0.5rem 0;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+
+nav li {
+  margin: 0 1rem;
+}
+
+nav a {
   color: white;
+  text-decoration: none;
 }
 
-.App-link {
-  color: #61dafb;
+nav a:hover {
+  text-decoration: underline;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+/* Main Content */
+main {
+  grid-area: main;
+  padding: 1rem;
+}
+
+/* Footer */
+footer {
+  grid-area: footer;
+  background-color: #222;
+  color: white;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  padding: 1rem;
+  gap: 1rem;
+}
+
+footer img {
+  max-width: 150px; /* Adjust the size of the logo */
+}
+
+.footer-navigation ul {
+  list-style: none;
+  padding: 0;
+}
+
+.footer-navigation a {
+  color: white;
+  text-decoration: none;
+}
+
+.footer-social a {
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  nav ul {
+    flex-direction: column;
+    align-items: center;
   }
-  to {
-    transform: rotate(360deg);
+
+  nav li {
+    margin-bottom: 0.5rem;
+  }
+
+  footer {
+    grid-template-columns: 1fr;
   }
 }
