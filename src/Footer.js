@@ -17,7 +17,7 @@ function Footer({onReservationClick }) {
             <li><a href="/menu">Menu</a></li>
             <li><a href="#" onClick={onReservationClick}>Reservations</a></li>
             <li><a href="/order">Order</a></li>
-            <li><a href="/login">Login</a></li>
+            <li><a href="/login">Sign-up/Login</a></li>
           </ul>
         </div>
 
@@ -25,6 +25,7 @@ function Footer({onReservationClick }) {
           <p>Address: 123 Lemon Street, Chicago IL </p>
           <p>Phone: (123) 456-7890</p>
           <p>Email: contact@littlelemon.com</p>
+          <p>Hours: 11am-3pm, 5pm-10pm</p>
         </div>
 
         <div className="footer-social">
