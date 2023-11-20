@@ -1,29 +1,24 @@
 import React from 'react';
+import { Routes, Route } from 'react-router-dom';
+import HomePage from './Homepage';
+import About from './About';
+import Menu from './Menu';
 import Reservations from './Reservations';
-import bruschetta from './assets/bruschetta.jpg';
+import Order from './Order';
+import Login from './Login';
 
-function Main({ showReservations }) {
+function Main() {
     return (
         <div>
-            {showReservations ? (
-                <Reservations />
-            ) : (
-                <div className="hero-section">
-                    <div className="hero-text">
-                        <h1>Little Lemon</h1>
-                        <h3>Chicago</h3>
-                        <p>We are a family owned
-                            Mediterranean restaurant,
-                            focused on traditional recipes
-                            served with a modern twist.
-                        </p>
-                        <button>Reserve a table</button>
-                    </div>
-                    <div className="hero-image">
-                        <img src={bruschetta} alt="Hero-Main" />
-                    </div>
-                </div>
-            )}
+            <Routes>
+                <Route path="/" element={<HomePage />} />
+                <Route path="/about" element={<About />} />
+                <Route path="/menu" element={<Menu />} />
+                <Route path="/reservations" element={<Reservations />} />
+                <Route path="/order" element={<Order />} />
+                <Route path="/login" element={<Login />} />
+                {/* Add more routes as needed */}
+            </Routes>
         </div>
     );
 }
