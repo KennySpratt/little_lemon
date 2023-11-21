@@ -3,13 +3,13 @@ import React from "react";
 const ConfirmedBooking = ({ bookingDetails }) => {
     return (
         <div className="confirm">
-            <div>
+            <div className="confirm-can">
                 <h1>Your Booking has Been <span>Confirmed!</span></h1>
-                {/*<p>Date: {bookingDetails.date}</p>
-                <p>Time: {bookingDetails.time}</p>
-                <p>Guests: {bookingDetails.guests}</p>
-                <p>Occasion: {bookingDetails.occasion}</p>
-                <p>Name: {bookingDetails.name}</p> */}
+                <p>Date: </p>
+                <p>Time: </p>
+                <p>Guests: </p>
+                <p>Occasion: </p>
+                <p>Name: </p>
             </div>
         </div>
     );

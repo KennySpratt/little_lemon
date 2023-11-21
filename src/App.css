@@ -192,10 +192,15 @@ input:hover {
   background-color:#F4CE14;
 }
 
-.comfirm span{
-  color: blue;
+.confirm {
+  background-color: #495E57;
+  color:#EDEFEE
 }
 
+.confirm-can {
+  margin-left: 3rem;
+  padding: 10px 5px;
+}
 
 /* menu items */
 
