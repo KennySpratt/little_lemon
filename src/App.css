@@ -102,10 +102,14 @@ position: relative;
 h2 {
   color: #F4CE14;
   font-size: 40px;
+  margin-bottom: 0;
 }
 
 h3 {
   font-size: 25px;
+  color: #EDEFEE;
+  margin-top: 0;
+  padding-top: 0;
 }
 
 .banner p {
@@ -114,6 +118,7 @@ h3 {
   line-height: 1.5;
   margin-bottom: 30px;
 }
+
 
 button {
   background-color: #F4CE14;
@@ -125,6 +130,14 @@ button {
   font-size: 20px;
   font-weight: bold;
   cursor: pointer;
+}
+
+button:hover {
+  background-color: #acbe08; /* Darker shade for hover effect */
+}
+
+.banner > div {
+  width: 100%;
 }
 
 .banner-img{
@@ -141,6 +154,7 @@ button {
   box-shadow: 0 4px 20px -2px gray;
 }
 
+/* Form Styles */
 
 form, .comfirm{
   padding: 10px 13%;
@@ -155,13 +169,15 @@ input, label{
   margin-right: 20px;
   margin-bottom: 20px;
 }
-#book-date, #book-time, #book-guests, #book-occasion{
+
+#book-date, #book-time, #book-guests, #book-occasion, #book-name, {
   background: #bdbdbd43;
   padding: 8px 24px;
   border: none;
   outline: none;
   border-radius: 2px;
 }
+
 
 .btnReceive input{
   padding: 12px 16px;
@@ -170,7 +186,10 @@ input, label{
   color: #fff;
   border: none;
   border-radius: 4px;
+}
 
+input:hover {
+  background-color:#F4CE14;
 }
 
 .comfirm span{
@@ -186,7 +205,9 @@ input, label{
 }
 
 .menu-container h2{
-  color: #000;
+  color: #495e57;
+  box-shadow: 0 4px 20px -2px gray;
+  border-radius: 8px;
 }
 
 .menu-header{
@@ -198,17 +219,16 @@ input, label{
 .cards{
   margin-top: 30px;
   display: flex;
-  justify-content: space-between;
+  flex-direction: row;
   align-items: center;
-  flex-wrap: wrap;
   gap: 2rem 1rem;
 }
 
 .menu-items{
-  /* height: 400px; */
   width: 350px;
-  background: #a9c8be;
+  background: #495e57;
   border-radius: 8px;
+  box-shadow: 4px 10px 2px gray;
 }
 
 .menu-container img{
@@ -219,6 +239,7 @@ input, label{
 
 .menu-content{
   padding: 5px 15px;
+  color: #EDEFEE;
 }
 
 
@@ -232,6 +253,52 @@ input, label{
   margin-bottom: 20px;
   font-size: 16px;
   font-weight: 600;
+}
+
+/* About Section */
+.about-section {
+  padding: 20px;
+  text-align: center;
+  background-color: #495E57;
+  color: #F5F5F5;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 1);
+}
+
+.about-section h1 {
+  color: #F4CE14;
+  margin-bottom: 20px;
+}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Two equal columns */
+  gap: 20px; /* Space between columns */
+}
+
+.text-column {
+  grid-column: 1 / -1; /* Span all columns */
+  margin-top: 20px; /* Space above the paragraph */
+}
+
+.images-column {
+  display: flex;
+  flex-direction: row; /* Images side by side */
+  justify-content: center; /* Horizontally center content */
+  align-items: center; /* Vertically center content */
+  gap: 10px; /* Space between images */
+}
+
+.images-column img {
+  width: auto; /* Adjust width as needed */
+  height: 200px; /* Example fixed height for consistency */
+  object-fit: cover; /* Adjust this as needed */
+}
+
+
+/* Second paragraph spanning all columns */
+.about-section > p {
+  grid-column: 1 / -1; /* Span all columns */
+  margin-top: 20px; /* Space above the paragraph */
 }
 
 /* Footer */
@@ -347,6 +414,16 @@ footer img {
     padding: 10px 8%;
   }
 
+  .cards {
+    flex-direction: column;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+  }
+
+  .menu-items {
+    width: 350px; /* Fixed width for larger screens */
+  }
+
 
   .header section, .menu-container{
     padding: 10px 8%;
@@ -360,6 +437,14 @@ footer img {
 
   .menu-items{
     width: 100%;
+  }
+
+  .images-column {
+    display: flex;
+    flex-direction: column; /* Images side by side */
+    justify-content: center; /* Horizontally center content */
+    align-items: center; /* Vertically center content */
+    gap: 10px; /* Space between images */
   }
 
   footer section{

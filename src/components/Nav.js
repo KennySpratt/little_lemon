@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 import logo from "../assets/Logo.jpg";
 
 const Nav = () => {
@@ -24,11 +25,11 @@ const Nav = () => {
             <div>
             <ul className={`nav-links ${menuOpen ? "visible" : ""}`}>
                 <li><a href="/">Home</a></li>
-                <li><a href="/about">About</a></li>
+                <li><Link to="/about">About</Link></li>
                 <li><a href="/menu">Menu</a></li>
                 <li><a href="/booking">Reservations</a></li>
-                <li><a href="/order">Order Online</a></li>
-                <li><a href="/login">Sign-up/Login</a></li>
+                <li><a href="/order">Order</a></li>
+                <li><a href="/login">Sign-up</a></li>
             </ul>
             </div>
         </nav>
