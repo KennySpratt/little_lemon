@@ -12,32 +12,26 @@ a{
 
 nav{
   z-index: 10001;
+  background-color: #F5F5F5;
+  box-shadow: 0 4px 20px -2px gray;
+  position: sticky;
+  top: 0;
 }
 
-.navbar {
+.nav-bar {
   padding: 10px 13%;
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* Space out logo and links */
   align-items: center;
 }
 
-nav a img {
-  width: auto;
-  height: 200px
+.nav-image img {
+  max-width: 350px; /* Adjust the size of the logo as needed */
+  transition: all 0.3s ease; /* Smooth transition for hover effect */
 }
 
-nav ul li {
-  display: inline-block;
-  padding: 1em;
-}
-
-nav ul li a{
-  color: #000;
-}
-
-nav ul li a:hover{
-  text-decoration: underline solid #495E57;
-  
+.nav-image img:hover {
+  filter: drop-shadow(0 0 10px yellow); /* Glowing effect */
 }
 
 .menu-icon {
@@ -50,12 +44,30 @@ nav ul li a:hover{
   height: 3px;
   background-color: black;
   margin: 5px 0;
+  border-radius: 5%;
 }
 
 .nav-links {
   list-style: none;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+}
+
+.nav-links li {
+  padding: 0 1em;
+}
+
+.nav-links a {
+  color: #495E57;
+  font-weight: bold;
+  text-decoration: none;
+}
+
+.nav-links a:hover {
+  color: #F4CE14;
+  font-weight: bolder;
 }
 
 .nav-links.visible {
@@ -77,6 +89,7 @@ nav ul li a:hover{
 .header {
   background-color: #495e57;
   padding: 40px 0;
+  box-shadow: 0 4px 20px -5px gray;
 }
 
 .header section {
@@ -104,7 +117,7 @@ h3 {
 
 button {
   background-color: #F4CE14;
-  color: black;
+  color: #495e57;
   padding: 14px 18px;
   border: none;
   text-decoration: none;
@@ -125,6 +138,7 @@ button {
   width: 100%;
   height: 400px;
   border-radius: 20px;
+  box-shadow: 0 4px 20px -2px gray;
 }
 
 
@@ -220,38 +234,79 @@ input, label{
   font-weight: 600;
 }
 
+/* Footer */
+
+footer {
+  grid-area: footer;
+  display: flex;
+  background-color: #F5F5F5;
+  color: #495E57;
+  justify-content: space-between; /* Adjusted for even spacing */
+  align-items: center;
+  text-align: center;
+  padding: auto;
+  /* Drop shadow */
+  box-shadow: 0 4px 20px 0 rgba(0,0,0,0.5); /* Adjust shadow as needed */
+}
+
 footer section{
+  width: 100%;
   padding: 10px 13%;
   display: flex;
   justify-content: space-between;
   align-items: start;
 }
 
-.company-info img{
-  margin-top: 12px;
-  cursor: pointer;
-  width: 200px;
+footer > div {
+  flex: 1; /* Each div takes equal space */
+  padding: 30px; /* Padding inside each div */
+  margin: 0 10px;
 }
 
-.company-info p{
-  width: 320px;
+footer img {
+  max-width: 200px; /* Adjust to desired width */
+  height: auto; /* Maintain aspect ratio */
 }
 
-footer h3{
-  font-size: 18px;
-}
-
-footer ul{
+.footer-navigation ul {
+  list-style: none;
   padding: 0;
 }
 
-footer ul li{
-  padding: 8px 0;
+.footer-navigation a {
+  color: #495E57;
+  text-decoration: none;
+}
+
+.footer-navigation a:hover {
+  color: #F4CE14;
+}
+
+.footer-social {
+  display: flex; /* Aligns children inline */
+  flex-direction: column; /* Center the icons horizontally */
+  align-items: center; /* Center the icons vertically */
+  justify-content: center; /* Center items vertically */
+}
+
+.footer-social a {
+  margin: 5px 0; /* Vertical spacing between links */  color: #495E57; /* Color of the icons */
+  font-size: 24px; /* Size of the icons */
+}
+
+.footer-social a:hover {
+  color: #F4CE14; /* Color change on hover */
 }
 
 
 @media screen and (max-width: 768px){
-  .menu-icon {
+  /* Styles for mobile view */
+ 
+  .nav-links li {
+    padding: 0.5em 0;
+  }
+
+ .menu-icon {
     display: block;
   }
 
@@ -261,9 +316,14 @@ footer ul li{
 
   .nav-links.visible {
     display: flex;
-    background: #333333;
-    z-index: 1000;
-    padding: 20px 0;
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: #333;
+    flex-direction: column;
+    align-items: center;
+    padding: 1em 0;
   }
 
   .navbar{
@@ -276,7 +336,7 @@ footer ul li{
   }
 
   .bar{
-    background: #333333;
+    background: slategrey;
   }
 
   .banner-img{
@@ -303,11 +363,31 @@ footer ul li{
   }
 
   footer section{
-    padding: 10px 8%;
+    display: flex;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: #EDEFEE;
     flex-direction: column;
+    align-items: center;
+    /* padding: 1em 0; */
   }
-  .company-info p{
-    width: 100%;
+  .footer-navigation, .footer-contact {
+    display: none;
+  }
+
+  /* Adjust footer layout for mobile */
+  footer > div {
+    flex-basis: 100%; /* Full width for each section */
+    text-align: center; /* Center text */
+    padding: 10px 0; /* Adjust padding */
+  }
+
+  .footer-social {
+    flex-direction: row; /* Horizontal layout on smaller screens */
+    justify-content: center;
+    width: 100%; /* Full width */
   }
 }
 

@@ -8,35 +8,31 @@ import { FaInstagramSquare } from "react-icons/fa";
 function Footer({onReservationClick }) {
     return (
       <footer>
-        <section>
-          <div className='company-info'>
-              <img src={logo} alt="Little Lemon Logo" />
-              <p>We are a family owned Mediterraneran restaurant, focused on traditional recipes served with a modern twist.</p>
+        <section className='footer-section'>
+          <div>
+            <img src={logo} alt="Little Lemon Logo" />
           </div>
           <div className="footer-navigation">
-          <h3>Links</h3>
             <ul>
               <li><a href="/">Home</a></li>
               <li><a href="/about">About</a></li>
               <li><a href="/menu">Menu</a></li>
-              <li><a href="/reservations">Reservations</a></li>
+              <li><a href="/booking">Reservations</a></li>
               <li><a href="/order">Order Online</a></li>
               <li><a href="/login">Sign-up/Login</a></li>
             </ul>
           </div>
 
           <div className="footer-contact">
-            <h3>Contact</h3>
             <ul>
-              <li>Address: <br/> 123 Lemon Street, Chicago IL </li>
-              <li>Phone: <br/> (123) 456-7890</li>
-              <li>Email: <br/> contact@littlelemon.com</li>
-              <li>Hours: <br/> 11am-3pm, 5pm-10pm</li>
+              <li><b>Address:</b> <br/> 123 Lemon Street, Chicago IL </li>
+              <li><b>Phone:</b> <br/> (123) 456-7890</li>
+              <li><b>Email:</b> <br/> contact@littlelemon.com</li>
+              <li><b>Hours:</b> <br/> 11am-3pm, 5pm-10pm</li>
             </ul>
           </div>
 
           <div className="footer-social">
-          <h3>Socials</h3>
             <a href="https://www.facebook.com" target="_blank" rel="noopener noreferrer">
               <FaFacebookSquare />
             </a>
