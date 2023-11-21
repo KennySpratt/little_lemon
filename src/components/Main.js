@@ -47,15 +47,23 @@ const Main = () => {
         }
     };
 
-    return(
+    return (
         <main className="main">
             <Routes>
-                <Route path="/" element={<Header />}  />
-                <Route path="/booking" element={<Booking availableTimes={state} dispatch={dispatch} submitForm={submitForm}/>}  />
-                <Route path="/confirmed" element={<ConfirmedBooking />}  />
+                <Route path="/" element={<Header />} />
+                <Route path="/booking" element={
+                    <Booking 
+                        availableTimes={state.availableTimes} 
+                        dispatch={dispatch} 
+                        submitForm={submitForm} 
+                    />
+                } />
+                <Route path="/confirmed" element={<ConfirmedBooking />} />
+                {/*... other routes if necessary */}
             </Routes>
         </main>
     );
 };
+
 
 export default Main;
